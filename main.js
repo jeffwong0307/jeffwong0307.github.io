@@ -33,3 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
 //         requestAnimationFrame(setFontSize); // 使用 requestAnimationFrame 进行平滑过渡
 //     });
 // });
+
+(function(){
+    if (typeof(WeixinJSBridge) == "undefined") {
+        document.addEventListener("WeixinJSBridgeReady", function (e) {
+            setTimeout(function(){
+                WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                    // alert(JSON.stringify(res));
+                });
+            },0);
+        });
+    } else {
+        setTimeout(function(){
+            WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                // alert(JSON.stringify(res));
+            });
+        },0);
+    }
+})();
