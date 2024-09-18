@@ -1,0 +1,949 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* 定义 Web 字体 */
+@font-face {
+    font-family: 'BianTaoFont';
+    src: url('fonts/BianTao.ttf') format('ttf'); /* 优先使用 woff2 格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 定义 Web 字体 */
+@font-face {
+    font-family: 'DeYiFont';
+    src: url('fonts/SmileySans-Oblique.otf.woff2') format('woff2'); /* 优先使用 woff2 格式 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 使用自定义字体 */
+/* .custom-font {
+    font-family: 'MyCustomFont', 'Arial', sans-serif; 
+} */
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    min-height: 100vh;
+    background-color: black;
+}
+
+
+.page-header {
+    /* position: relative;
+    max-width: 1620px;
+    margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.page-header-bg {
+    /* border: 1px solid green; */
+}
+
+.page-header-content {
+    /* max-width: 2000px; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #333; */
+    padding: 40px 80px;
+    box-sizing: border-box;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    /* border: 1px solid blue; */
+}
+
+.page-header-logo {
+    /* border: 1px solid cyan; */
+}
+.page-header-logo a {
+    display: inline-block;
+    /* border: 1px solid red; */
+    text-decoration: none;
+    /* font-family: 'DeYiFont', sans-serif; */
+    font-size: 20px;
+    font-weight: bold;
+    font-style:italic;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.page-header-logo img {
+    /* width: 90px; */
+    display: inline-block;
+    height: min-content;
+    /* border: 1px solid yellow; */
+}
+
+.page-header-logo span {
+    /* border: 1px solid green; */
+    display: inline-block;
+    line-height: 20px;
+    vertical-align:middle;
+    margin-top: 10.5px;
+}
+
+.page-header-menu {
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.page-header-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    /* border: 1px solid purple; */
+    padding: 14px 40px;
+    font-size: 16px;
+    transform: skewX(-8deg); /* 文字倾斜 */
+}
+
+.page-header-menu a:hover {
+    color: orange;
+    transition: 0.3s ease;
+}
+
+.more-btn-more {
+    display: inline-block;
+    /* padding: 10px 20px; */
+    /* color: #ccc; */
+    text-decoration: none;
+    background-image: url('img/MORE_btn_bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    transform: skewX(-8deg); /* 文字倾斜 */
+    border: 1px solid rgb(139, 139, 139);
+    margin-left: 20px;
+}
+
+.more-btn-more span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #ccc;
+    /* transform: skewY(20deg); */
+    font-weight: bolder;
+}
+
+.more-btn-more:hover span{
+    color: orange;
+    transition: 0.3s ease;
+}
+
+
+
+/* 背景视频样式 */
+.home-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    min-height: 700px;
+    /* max-height: 1200px; */
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0.6;
+    transition: all 0.7s ease;
+    /* border: 1px solid yellow; */
+    
+}
+
+
+video {
+    height: auto;
+    width: 100%;
+    /* 添加黑白滤镜 */
+    /* filter: grayscale(100%); */
+}
+
+@media screen and (max-aspect-ratio: 1900/900) {
+    video {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.home-video-shadow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    /* border: 1px solid red; */
+}
+
+.home-video-shadow-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5)  100%);
+    /* border: 1px solid red; */
+}
+
+
+.page-box {
+    /* border: 10px solid yellow; */
+    /* width: 100vw; */
+}
+
+.page-content {
+    /* max-width: 1720px; */
+    /* border: 6px solid red; */
+    margin: 0 auto;
+
+}
+
+
+.home-banner {
+    position: relative;
+    box-sizing: border-box;
+    height: 75vh;
+    /* max-width: 1720px; */
+    width: 90%;
+    margin: 0 auto;
+    /* padding: 0 90px; */
+    min-height: 500px;
+    max-height: 1200px;
+    /* border: 4px solid green; */
+} 
+
+.banner-decoration {
+    position: absolute;
+    /* border: 4px solid yellow; */
+    top: 8%;
+    width: 100%;
+    /* max-width: 1620px; */
+    /* z-index: 3; */
+    /* opacity: 1; */
+}
+
+.banner-decoration-content {
+    /* border: 4px solid purple; */
+    box-sizing: border-box;
+    /* max-width: 1800px; */
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    /* padding-top: 3%; */
+    
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.banner-decoration img {
+    /* border: 1px solid red; */
+    /* height: min-content; */
+    height: 100%;
+    width: auto;
+    /* margin: 0 100px; */
+}
+
+
+.cover-banner {
+    /* box-sizing: border-box; */
+    position: absolute;
+    bottom: 12%;
+    /* border: 1px solid pink; */
+    /* margin-left: 90px; */
+    /* width: 30%; */
+}
+
+.cover-banner img {
+    /* border: 1px solid green; */
+    margin-bottom: 30px;
+    width: 520px;
+}
+
+.cover-banner h4 {
+    /* border: 1px solid cyan; */
+    color: #f5f5f5;
+    font-family: 'DeYiFont', sans-serif;
+    font-size: 36px;
+    font-weight:normal;
+    /* transform: skewX(-8deg); */
+}
+
+.cover-count {
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 12%;
+    right: 0;
+    /* border: 1px solid pink; */
+    opacity: 0;
+}
+
+
+.cover-count h4,
+.cover-count span {
+    /* border: 1px solid blue; */
+    color: #f5f5f5;
+    font-family: 'DeYiFont', sans-serif;
+}
+
+.cover-count h4 {
+    display: inline-block;
+    font-size: 160px;
+    font-weight:normal;
+}
+
+
+.cover-count span {
+    font-size: 80px;
+    font-weight:normal;
+}
+
+.works {
+    /* max-width: 1720px; */
+    /* border: 4px solid blue; */
+    /* margin: 0 auto; */
+    padding-bottom: 40px;
+
+    /* position: absolute;
+    bottom: 0px; */
+    /* margin-bottom: -27%; */
+    /* border: 1px solid blue; */
+    width: 100%;
+}
+
+.works-content {
+    /* border: 4px solid white; */
+    box-sizing: border-box;
+    width: 90%;
+    /* padding: 0 90px; */
+    /* max-width: 1680px; */
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.works-poster {
+    /* border: 1px solid red; */
+    width: 23.5%;
+    /* padding: 0 20px; */
+    transition: transform 0.3s ease;
+    /* transform: perspective(600px) rotateX(0deg) rotateY(0deg) scale(1); */
+    cursor: pointer;
+
+
+}
+
+.works-poster img {
+    width: 100%;
+    
+    /* position: relative;
+    transform-style: preserve-3d; */
+    /* box-shadow: 0 0 25px 10px hsla(0, 0%, 0%, 0.2); */
+
+
+}
+
+.works-poster:hover {
+    transform: translateY(-20px);
+}
+
+
+
+/* --------------------------------------------------- */
+
+
+/* 什么是未来黑匣 */
+.bigtitle-bg {
+    position: relative;
+    /* border: 6px solid green; */
+    /* max-width: 1720px; */
+    /* margin: 0 auto; */
+    margin-top: 80px;
+    /* padding: 0 90px; */
+    min-height: 700px;
+    max-height: 1200px;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 水平和垂直居中 */
+    overflow: hidden;
+
+}
+
+
+.what::before {
+    /* border: 1px solid blue; */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('img/logo_blur_2.png'); /* 替换为你的背景图路径 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; /* 使背景图按比例缩放以适应容器 */
+    z-index: -1; /* 确保伪元素在内容之下 */
+}
+
+
+
+.bigtitle-content {
+    /* border: 6px solid orange; */
+    box-sizing: border-box; 
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    /* max-width: 1680px; */
+    
+    position: relative;
+    /* padding: 0 90px; */
+}
+
+
+.bubble {
+    /* border: 1px solid red; */
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    z-index: 1000;
+}
+
+.bubble-1 {
+    top: 28%; /* 距离顶部20% */
+    left: 75%; /* 距离左侧50% */
+}
+
+.bubble-2 {
+    top: 80%; /* 距离顶部20% */
+    left: 40%; /* 距离左侧50% */
+}
+
+.bubble-3 {
+    top: 20%; /* 距离顶部20% */
+    left: 24%; /* 距离左侧50% */
+}
+
+.bubble img {
+    animation: shake 12s ease-in-out infinite; /* 应用 float 动画 */
+    transition: all 0.36s ease;
+}
+
+.bubble img:hover {
+    animation-play-state: paused;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    mix-blend-mode: screen; /* 使用屏幕混合模式 */
+}
+
+
+
+
+/* 定义 shake 动画 */
+@keyframes shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(-10px, -10px);
+    }
+    20% {
+        transform: translate(10px, 10px);
+    }
+    30% {
+        transform: translate(-10px, 10px);
+    }
+    40% {
+        transform: translate(10px, -10px);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    60% {
+        transform: translate(10px, 0);
+    }
+    70% {
+        transform: translate(-10px, 0);
+    }
+    80% {
+        transform: translate(0, 10px);
+    }
+    90% {
+        transform: translate(0, -10px);
+    }
+}
+
+
+.bigtitle-main {
+    position: relative;
+    display: flex;
+    /* border: 6px solid cyan; */
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigtitle-main img {
+    /* display: inline-block; */
+    /* border: 1px soild red;
+    position: absolute; */
+    width: 100%;
+}
+
+.bigtitle-main p {
+    position: absolute;
+    /* border: 1px solid pink; */
+    font-family: "DeYiFont", sans-serif;
+    /* font-size: 100px; */
+    font-weight: normal;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.bigtitle-deco {
+    /* border: 6px solid purple; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+/* 子元素的样式 */
+.bigtitle-left-top,
+.bigtitle-left-bottom,
+.bigtitle-right-top,
+.bigtitle-right-bottm,
+.bigtitle-center-bottom {
+    position: absolute;
+    /* border: 1px solid red; */
+    font-family: 'DeYiFont', sans-serif;
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+.bigtitle-left-top {
+    top: 0;
+    left: 0;
+}
+
+.bigtitle-left-top span {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.bigtitle-left-bottom {
+    bottom: 0;
+    left: 0;
+}
+
+
+.bigtitle-right-top {
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+.bigtitle-right-top span {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.bigtitle-right-bottm {
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+.bigtitle-right-bottm span {
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.bigtitle-center-bottom {
+    /* border: 1px solid yellowgreen; */
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bigtitle-center-bottom span {
+    font-size: 60px;
+}
+
+
+
+.bigtitle-what {
+    font-size: 100px;
+    /* bordor */
+}
+
+.bigtitle-why {
+    background: linear-gradient(-150deg, red, orange, yellow, rgb(54, 253, 137), rgb(58, 143, 255), white);
+    /* background: linear-gradient(-150deg, rgb(54, 253, 137), rgb(58, 143, 255),  white); */
+    -webkit-background-clip: text; /* WebKit 浏览器 */
+    -moz-background-clip: text; /* Firefox */
+    background-clip: text; /* 标准属性 */
+    color: transparent;
+    font-size: 150px;
+    border: 1p solid red;
+}
+
+
+
+/* --------------------------------------------------- */
+
+
+/* 内容模板 */
+.reason-bg {
+    position: relative;
+    /* border: 4px solid green; */
+    /* margin-top: 80px; */
+    /* padding: 0 90px; */
+    padding: 80px 0;
+    /* box-sizing: border-box; */
+    min-height: 700px;
+    max-height: 1200px;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+
+}
+
+.reason-bg-decoration {
+    /* border: 4px solid blue; */
+    width: 100%;
+    height: 100%;
+    /* width: 100%; */
+    box-sizing: border-box;
+    position: absolute;
+    /* display: flex; */
+    /* justify-content: right; */
+    /* align-items: center; */
+    /* right: 0;   */
+    /* margin-left: 50%; */
+    z-index: 99;
+}
+
+.reason-bg-decoration img {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.blur_bg_right {
+    height: 100%;
+    margin-right: -25%;
+    right: 0;
+}
+
+.blur_bg_left {
+    height: 100%;
+    margin-left: -25%;
+    left: 0;
+}
+
+.reason-content {
+    /* border: 4px solid yellow; */
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 90%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+.reason-intro {
+    /* border: 1px solid green; */
+    position: absolute;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reason-intro h1 {
+    /* border: 1px solid cyan; */
+    font-family: 'DeYiFont', sans-serif;
+    font-weight: normal;
+    font-size: 80px;
+}
+
+.reason-advntags  {
+    /* border: 1px solid red; */
+    /* padding-bottom: 30px; */
+}
+
+.advntag-item {
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    margin-top: 36px;
+}
+
+.advntag-item img {
+    /* border: 1px solid orange; */
+    width: 68px;
+    /* min-width: 36px; */
+}
+
+.advntag-item p {
+    /* border: 1px solid blue; */
+    margin-left: 36px;
+    /* font-family: 'DeYiFont', sans-serif; */
+    /* font-weight:100; */
+    font-size: 18px;
+    line-height: 36px;
+    color: #b6b6b6;
+    /* position: relative; */
+    /* align-items: center; */
+    /* line-height: 100%; */
+}
+
+
+
+.reason-img {
+    /* border: 6px solid yellow; */
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    /* top:8%; */
+    /* min-width: 60%; */
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    /* overflow: visible; */
+}
+
+/* @media screen and (max-aspect-ratio: 1900/900) {
+    .reason-img {
+        width: 80%;
+        height: auto;
+    }
+} */
+
+.reason-img img {
+    width: auto;
+    height: 100%;
+}
+
+@media screen and (max-aspect-ratio: 1400/900) {
+    .reason-img img {
+        width: 80%;
+        height: auto;
+    }
+} 
+
+.bento-bg {
+    position: relative;
+    /* border: 4px solid green; */
+    padding: 40px 0;
+    box-sizing: border-box;
+    min-height: 700px;
+    max-height: 800px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.bento-content {
+    /* border: 4px solid red; */
+    box-sizing: border-box; 
+    display: flex;
+    /* justify-content: space-between;  */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+    width: 90%;
+    /* min-width: 1600px; */
+    height: 100%;
+    position: relative;
+}
+
+.bento-up {
+    box-sizing: border-box;
+    /* border: 4px solid wheat; */
+    width: 100%;
+    /* height: 64.5%; */
+    height: 100%;
+    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bento-up-card {
+    /* border: 4px solid green; */
+    box-sizing: border-box;
+    height: 100%;
+    width: 24.5%;
+    border-radius: 24px;
+    background-color: #111111;
+    padding: 1.6% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bento-down {
+    box-sizing: border-box;
+    /* border: 4px solid blue; */
+    width: 100%;
+    /* height: 34.5%; */
+    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bento-down-card {
+    /* border: 4px solid red; */
+    box-sizing: border-box;
+    height: 100%;
+    width: 49.65%;
+    border-radius: 24px;
+    background-color: #292929;
+
+}
+
+.bento-up-card-title {
+    /* border: 4px solid yellow; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DeYiFont', sans-serif;
+    /* margin-bottom: 36px; */
+}
+
+.maindata {
+    /* border: 4px solid purple; */
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 80px;
+}
+
+.maindata-unit {
+    /* border: 4px solid orange; */
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 36px;
+}
+
+.subtitle {
+    /* border: 4px solid pink; */
+    box-sizing: border-box;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.bento-up-card-item-box {
+    /* border: 4px solid cyan; */
+    box-sizing: border-box;
+    /* margin-top: 36px; */
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-up-card-item {
+    /* border: 4px solid greenyellow; */
+    box-sizing: border-box;
+    height: 25%;
+    /* margin-top: 36px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bento-up-card-item img {
+    /* border: 4px solid red; */
+    box-sizing: border-box;
+    /* width: 20%; */
+    height: 100%;
+    /* height: 68px; */
+}
+
+.bento-up-card-item p {
+    /* border: 4px solid rebeccapurple; */
+    box-sizing: border-box;
+    width: 60%;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'DeYiFont', sans-serif;
+    font-weight: normal;
+    color: #b6b6b6;
+    /* margin-left: 28px; */
+}
+
+@media screen and (max-aspect-ratio: 1660/1000) {
+    .bento-up-card-item p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+} 
+
+
+.footer-bg {
+    /* border: 4px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-content {
+    /* border: 4px solid green; */
+    text-align: center;
+    width: 90%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+
+}
+
+.footer-bg p {
+    /* border: 4px solid blue; */
+    display: block;
+    color: #b6b6b6;
+    font-size: 16px;
+    line-height: 36px;
+} 
