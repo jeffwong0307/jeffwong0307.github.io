@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     color: white;
+    box-sizing: border-box;
 }
 
 /* 定义 Web 字体 */
@@ -159,7 +160,7 @@ body {
     right: 0;
     height: 100vh;
     min-height: 700px;
-    /* max-height: 1200px; */
+    max-height: 1200px;
     overflow: hidden;
     z-index: -1;
     opacity: 0.6;
@@ -316,14 +317,7 @@ video {
 }
 
 .works {
-    /* max-width: 1720px; */
-    /* border: 4px solid blue; */
-    /* margin: 0 auto; */
     padding-bottom: 40px;
-
-    /* position: absolute;
-    bottom: 0px; */
-    /* margin-bottom: -27%; */
     /* border: 1px solid blue; */
     width: 100%;
 }
@@ -332,20 +326,16 @@ video {
     /* border: 4px solid white; */
     box-sizing: border-box;
     width: 90%;
-    /* padding: 0 90px; */
-    /* max-width: 1680px; */
     margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* 允许子项换行 */
 }
 
 .works-poster {
     /* border: 1px solid red; */
     width: 23.5%;
-    /* padding: 0 20px; */
     transition: transform 0.3s ease;
-    /* transform: perspective(600px) rotateX(0deg) rotateY(0deg) scale(1); */
     cursor: pointer;
 
 
@@ -353,17 +343,29 @@ video {
 
 .works-poster img {
     width: 100%;
-    
-    /* position: relative;
-    transform-style: preserve-3d; */
-    /* box-shadow: 0 0 25px 10px hsla(0, 0%, 0%, 0.2); */
-
-
 }
 
 .works-poster:hover {
     transform: translateY(-20px);
 }
+
+
+
+ /* 海报的响应式布局 */
+@media (max-width: 1440px) {
+    .works-poster {
+        width: 48%; /* 占据一半宽度 */
+        margin-bottom: 20px; /* 添加一些间距 */
+    }
+}
+
+@media (max-width: 768px) {
+    .works-poster {
+        width: 100%; /* 占据100%宽度 */
+        margin-bottom: 20px; /* 添加一些间距 */
+    }
+}
+
 
 
 
