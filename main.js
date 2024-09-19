@@ -27,6 +27,8 @@ function initModal() {
     // 获取关闭按钮
     var span = document.getElementsByClassName("close")[0];
 
+    modal.style.display = "none";
+
     // 获取视频播放器和视频源元素
     var videoPlayer = document.getElementById('videoPlayer');
     var videoSource = document.getElementById('videoSource');
@@ -38,6 +40,7 @@ function initModal() {
         null,               // 海报3没有视频
         null                // 海报4没有视频
     ];
+
 
     // 获取所有海报
     var posters = document.querySelectorAll('.works-poster');
@@ -75,12 +78,16 @@ function initModal() {
     });
 }
 
+
 // 初始化导航菜单
 function initNavigationMenu() {
     var toggleMenuButton = document.querySelector('.toggle-menu');
     var dropdownMenu = document.querySelector('.dropdown-menu');
     // 获取关闭按钮 (只选取第一个 close-menu 元素)
     var close_menu = document.querySelector(".close-menu");
+
+    // toggleMenuButton.style.display = "none";
+    dropdownMenu.style.display = "none";
 
     // 切换下拉菜单的显示与隐藏
     toggleMenuButton.addEventListener('click', function(e) {
