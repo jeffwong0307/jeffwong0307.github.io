@@ -16,32 +16,52 @@
     </div>
 
 
-    <div class="page-header">
-        <div class="page-header-bg"></div>
-        <div class="page-header-content">
 
+
+    <div class="page-header">
+        <!-- <div class="page-header-bg"></div> -->
+        <div class="page-header-content">
             <div class="page-header-logo">
                 <a href="./">
                     <img src="img/LOGO.png" alt="Logo" width="90">
                     <span>&nbsp;&nbsp;维普拉斯</span>
                 </a>
             </div>
-
             <nav class="page-header-menu">
-                <a href="./" class="on">未来黑匣 XR</a>
+                <a href="./" class="on" style="color: orange; font-weight: bold;">未来黑匣 XR</a>
                 <a href="https://www.virtualplus.cn/">维普拉斯丨研究院</a>
                 <a href="https://www.virtualplus.cn/VCourse.html">维普拉斯丨学院</a>
-                <div class="more-btn">
-                    <a class="more-btn-more"
-                        href="https://space.bilibili.com/11241851?spm_id_from=333.337.search-card.all.click"
-                        target="_blank">
-                        <span>MORE</span>
-                    </a>
-                </div>
+                <a class="bili-btn"
+                    href="https://space.bilibili.com/11241851?spm_id_from=333.337.search-card.all.click"
+                    target="_blank">
+                    <span>Bilibili</span>
+                </a>
+                <button class="toggle-menu" aria-label="Toggle Menu">
+                    <span class="menu-icon">&#9776;</span>
+                </button>
+
+                
+
             </nav>
         </div>
-
     </div>
+
+
+
+    <!-- 导航模态窗口 -->
+    <div class="dropdown-menu">
+        <div class="dropdown-content">
+            <a href="./">未来黑匣 XR  →</a>
+            <a href="https://www.virtualplus.cn/">维普拉斯丨研究院  →</a>
+            <a href="https://www.virtualplus.cn/VCourse.html">维普拉斯丨学院 →</a>
+            <a href="https://space.bilibili.com/11241851?spm_id_from=333.337.search-card.all.click" target="_blank">
+                更多  →
+            </a>
+        </div>
+        <span class="close-menu">&times;</span>
+    </div>
+
+
 
 
     <div class="home-video">
@@ -50,7 +70,16 @@
         <div class="home-video-shadow-top"></div>
     </div>
 
-
+    <!-- 模态窗口 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <div class="page-box">
 
@@ -88,14 +117,54 @@
 
             <div class="works">
                 <div class="works-content">
-                    <div class="works-poster"><img src="img/Poster_DAS.png" alt=""></div>
-                    <div class="works-poster"><img src="img/Poster_SD.png" alt=""></div>
-                    <div class="works-poster"><img src="img/Poster_WDS.png" alt=""></div>
-                    <div class="works-poster"><img src="img/Poster_VO.png" alt=""></div>
-                    <!-- <div class="works-poster"><img src="img/Poster_VO.png" alt=""></div> -->
+                    
+                    <div class="works-poster poster-1">
+                        <img src="img/Poster_DAS.png" alt="">
+                        <div class="info-overlay">
+                            <div class="overlay-content">
+                                <p>类型：动作射击</p>
+                                <p>模式：单人/组队</p>
+                                <p>年龄：10+</p>
+                                <p>时长：20min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="works-poster poster-2">
+                        <img src="img/Poster_SD.png" alt="">
+                        <div class="info-overlay">
+                            <div class="overlay-content">
+                                <p>类型：交互科普</p>
+                                <p>模式：单人/组队</p>
+                                <p>年龄：8+</p>
+                                <p>时长：20min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="works-poster poster-3">
+                        <img src="img/Poster_WDS.png" alt="">
+                        <div class="info-overlay">
+                            <div class="overlay-content">
+                                <p>类型：探险解谜</p>
+                                <p>模式：单人/组队</p>
+                                <p>年龄：8+</p>
+                                <p>时长：20min</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="works-poster poster-4">
+                        <img src="img/Poster_VO.png" alt="">
+                        <div class="info-overlay">
+                            <div class="overlay-content">
+                                <p>类型：沉浸观影</p>
+                                <p>模式：单人/组队</p>
+                                <p>年龄：8+</p>
+                                <p>时长：20min</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
 
 
             <!-- 大标题 什么是未来黑匣 -->
@@ -336,7 +405,7 @@
                                 <div class="bento-up-card-item">
                                     <img src="img/icons/qrcode.png" alt="">
                                     <p>2023-2024<br>
-                                        AI空间计算成果孵化器</p>
+                                        空间计算成果孵化器</p>
                                 </div>
                             </div>
                         </div>
@@ -354,7 +423,7 @@
                                 <div class="bento-up-card-item">
                                     <img src="img/icons/4+.png" alt="">
                                     <p>已推出4款<br>
-                                        LBEXR 大空间互动作品</p>
+                                        LBEXR互动作品</p>
                                 </div>
                                 <div class="bento-up-card-item">
                                     <img src="img/icons/Theme.png" alt="">
@@ -363,7 +432,7 @@
                                 </div>
                                 <div class="bento-up-card-item">
                                     <img src="img/icons/Unreal.png" alt="">
-                                    <p>不断探索新创意和技术<br>
+                                    <p>不断探索创意技术<br>
                                         打造更多XR体验</p>
                                 </div>
                             </div>
@@ -380,8 +449,8 @@
                             <div class="bento-up-card-item-box">
                                 <div class="bento-up-card-item">
                                     <img src="img/icons/meta.png" alt="">
-                                    <p>选择性价比最高的头显<br>
-                                        最左针对性优化</p>
+                                    <p>选择高性价比头显<br>
+                                        并做针对性优化</p>
                                 </div>
                                 <div class="bento-up-card-item">
                                     <img src="img/icons/nocable.png" alt="">
